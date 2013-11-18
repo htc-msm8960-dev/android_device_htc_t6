@@ -28,10 +28,13 @@
 -include device/htc/t6-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := t6ul
+TARGET_OTA_ASSERT_DEVICE := t6,t6ul
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := t6ul
+TARGET_BOOTLOADER_BOARD_NAME := t6
+
+# Kernel
+TARGET_PREBUILT_KERNEL := device/htc/t6ul/kernel
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
