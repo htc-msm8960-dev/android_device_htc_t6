@@ -21,7 +21,7 @@
 # lines, full and maguro, hence its name.
 #
 
-LOCAL_PATH := device/htc/t6ul
+LOCAL_PATH := device/htc/t6
 ifeq ($(TARGET_PREBUILT_KERNEL),)
         LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -34,12 +34,12 @@ PRODUCT_COPY_FILES += \
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from t6ul device
-$(call inherit-product, device/htc/t6ul/device.mk)
+# Inherit from t6 device
+$(call inherit-product, device/htc/t6/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_t6ul
-PRODUCT_DEVICE := t6ul
+PRODUCT_NAME := full_t6
+PRODUCT_DEVICE := t6
 PRODUCT_BRAND := htc
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_MODEL := One Max

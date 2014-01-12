@@ -28,13 +28,13 @@
 -include device/htc/t6-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := t6,t6ul
+TARGET_OTA_ASSERT_DEVICE := t6,t6att,t6tmo,t6ul
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := t6
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/htc/t6ul/kernel
+TARGET_PREBUILT_KERNEL := device/htc/t6/kernel
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -75,4 +75,4 @@ BOARD_PROVIDES_LIBRIL := true
 # mmcblk0p33: 04729a00 00000200 "reserve"
 
 # inherit from the proprietary version
--include vendor/htc/t6ul/BoardConfigVendor.mk
+-include vendor/htc/t6/BoardConfigVendor.mk
