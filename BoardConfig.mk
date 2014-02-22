@@ -37,42 +37,8 @@ TARGET_BOOTLOADER_BOARD_NAME := t6
 TARGET_PREBUILT_KERNEL := device/htc/t6/kernel
 
 # Filesystem
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1946156032
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27917287424
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-
-# cat /proc/emmc:
-# dev:        size     erasesize name
-# mmcblk0p21: 000ffa00 00000200 "misc"
-# mmcblk0p38: 00fffe00 00000200 "recovery"
-# mmcblk0p37: 01000000 00000200 "boot"
-# mmcblk0p39: 98000000 00000200 "system"
-# mmcblk0p28: 00140200 00000200 "local"
-# mmcblk0p41: 17fffe00 00000200 "cache"
-# mmcblk0p42: 668000000 00000200 "userdata"
-# mmcblk0p24: 01400000 00000200 "devlog"
-# mmcblk0p26: 00040000 00000200 "pdata"
-# mmcblk0p29: 00010000 00000200 "extra"
-# mmcblk0p34: 05000000 00000200 "radio"
-# mmcblk0p16: 03c00400 00000200 "adsp"
-# mmcblk0p15: 00100000 00000200 "dsps"
-# mmcblk0p18: 00500000 00000200 "wcnss"
-# mmcblk0p17: 007ffa00 00000200 "radio_config"
-# mmcblk0p22: 00400000 00000200 "modem_st1"
-# mmcblk0p23: 00400000 00000200 "modem_st2"
-# mmcblk0p31: 00040000 00000200 "skylink"
-# mmcblk0p32: 01900000 00000200 "carrier"
-# mmcblk0p30: 00100000 00000200 "cdma_record"
-# mmcblk0p20: 016ffc00 00000200 "reserve_1"
-# mmcblk0p35: 02fffc00 00000200 "reserve_2"
-# mmcblk0p36: 05fffc00 00000200 "reserve_3"
-# mmcblk0p40: 03fffa00 00000200 "reserve_4"
-# mmcblk0p33: 04729a00 00000200 "reserve"
 
 # inherit from the proprietary version
 -include vendor/htc/t6/BoardConfigVendor.mk
