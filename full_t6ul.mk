@@ -21,16 +21,6 @@
 # lines, full and maguro, hence its name.
 #
 
-LOCAL_PATH := device/htc/t6
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-        LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-        LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
