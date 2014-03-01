@@ -33,9 +33,5 @@ TARGET_OTA_ASSERT_DEVICE := t6,t6att,t6tmo,t6ul
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := t6
 
-# Filesystem
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1946156032
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 27917287424
-
 # inherit from the proprietary version
 -include vendor/htc/t6/BoardConfigVendor.mk
