@@ -19,10 +19,8 @@ $(call inherit-product-if-exists, vendor/htc/t6/t6-vendor.mk)
 
 # FM radio
 PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libfmjni
 
 # Inherit from t6-common
 $(call inherit-product, device/htc/t6-common/t6-common.mk)

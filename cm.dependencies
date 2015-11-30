@@ -2,9 +2,5 @@
   {
     "repository": "android_device_htc_t6-common",
     "target_path": "device/htc/t6-common"
-  },
-  {
-    "repository": "android_hardware_qcom_fm",
-    "target_path": "hardware/qcom/fm"
   }
 ]
