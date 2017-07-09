@@ -28,10 +28,14 @@
 -include device/htc/t6-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := t6,t6att,t6tmo,t6ul
+TARGET_OTA_ASSERT_DEVICE := t6,t6att,t6tmo,t6ul,t6wl,t6vzw,t6whl,t6spr
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := t6
+
+# Vendor Init
+TARGET_INIT_VENDOR_LIB := libinit_t6
+TARGET_RECOVERY_DEVICE_MODULES := libinit_t6
 
 # inherit from the proprietary version
 -include vendor/htc/t6/BoardConfigVendor.mk
