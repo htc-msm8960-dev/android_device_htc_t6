@@ -120,6 +120,36 @@ void vendor_load_properties()
         property_override("persist.radio.dont_use_dsd", "true");
         property_set("ro.ril.set.mtusize", "1422");
         property_set("ro.ril.svdo", "true");
+    } else if (bootmid == "0P3P40000") {
+        /* t6tl */
+        common_properties();
+        property_set("ro.telephony.default_network", "9");
+        property_override("ro.product.model", "HTC 8088");
+        property_override("ro.build.fingerprint", "htc/htccn_chs_cmcc/t6tl:5.0.2/LRX22G/524896.8:user/release-keys");
+        property_override("ro.build.description", "3.22.1403.8 CL524896 release-keys");
+        property_override("ro.product.device", "t6tl");
+        property_override("ro.build.product", "t6tl");
+        property_set("ro.ril.enable.a52", "0");
+        property_set("ro.ril.enable.a53", "1");
+        property_set("ro.ril.hsdpa.category", "10");
+        property_set("ro.ril.hsupa.category", "6");
+        property_set("ro.ril.hsxpa", "2");
+        property_set("ro.ril.enable.sdr", "0");
+        property_set("ro.ril.set.mtusize", "1420");
+        property_set("ro.ril.enable.r8fd", "1");
+        property_set("ro.ril.disable.cpc", "1");
+        property_set("ro.telephony.ipv6_capability", "1");
+        property_set("ro.ril.enable.pre_r8fd", "1");
+        property_set("ro.ril.fd.pre_r8_tout.scr_off", "2");
+        property_set("ro.ril.fd.pre_r8_tout.scr_on", "3");
+        property_set("ro.ril.fd.r8_tout.scr_off", "2");
+        property_set("ro.ril.fd.r8_tout.scr_on", "3");
+        property_set("ro.ril.td.hsxpa", "2");
+        property_set("ro.ril.td.hsdpa.category", "15");
+        property_set("ro.ril.td.hsupa.category", "6");
+        property_set("ro.baseband.arch", "sglte2");
+        property_set("persist.radio.tdscdma_present", "2");
+        property_set("persist.radio.hyst_ps_to_g", "60");
     } else {
         /* t6 */
         common_properties();
