@@ -123,7 +123,7 @@ void vendor_load_properties()
     } else if (bootmid == "0P3P40000") {
         /* t6tl */
         common_properties();
-        property_set("ro.telephony.default_network", "9");
+        property_set("ro.telephony.default_network", "22");
         property_override("ro.product.model", "HTC 8088");
         property_override("ro.build.fingerprint", "htc/htccn_chs_cmcc/t6tl:5.0.2/LRX22G/524896.8:user/release-keys");
         property_override("ro.build.description", "3.22.1403.8 CL524896 release-keys");
@@ -153,7 +153,7 @@ void vendor_load_properties()
     } else {
         /* t6 */
         common_properties();
-        gsm_properties("9");
+        gsm_properties("22");
         property_override("ro.product.model", "One Max");
         property_override("ro.build.fingerprint", "htc/htc_europe/t6ul:5.0.2/LRX22G/525693.7:user/release-keys");
         property_override("ro.build.description", "4.13.401.7 CL525693 release-keys");
