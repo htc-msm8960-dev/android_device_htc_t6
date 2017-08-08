@@ -115,9 +115,9 @@ void vendor_load_properties()
         property_override("ro.build.description", "3.02.651.5 CL335898 release-keys");
         property_override("ro.product.device", "t6spr");
         property_override("ro.build.product", "t6spr");
-        property_override("telephony.sms.pseudo_multipart", "1");
-        property_override("persist.radio.mode_pref_nv10", "1");
-        property_override("persist.radio.dont_use_dsd", "true");
+        property_set("telephony.sms.pseudo_multipart", "1");
+        property_set("persist.radio.mode_pref_nv10", "1");
+        property_set("persist.radio.dont_use_dsd", "true");
         property_set("ro.ril.set.mtusize", "1422");
         property_set("ro.ril.svdo", "true");
     } else if (bootmid == "0P3P40000") {
