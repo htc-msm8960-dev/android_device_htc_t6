@@ -32,9 +32,14 @@
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
+#include <android-base/properties.h>
+
 #include "property_service.h"
+#include "vendor_init.h"
 #include "log.h"
 #include "util.h"
+
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -72,11 +77,11 @@ void vendor_load_properties()
     std::string bootmid;
     std::string device;
 
-    platform = property_get("ro.board.platform");
+    platform = GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    bootmid = property_get("ro.boot.mid");
+    bootmid = GetProperty("ro.boot.mid", "");
 
     if (bootmid == "0P3P10000") {
         /* t6vzw (t6wl) */
@@ -161,6 +166,6 @@ void vendor_load_properties()
         property_override("ro.build.product", "t6");
     }
 
-    device = property_get("ro.product.device");
-    ERROR("Found bootmid %s setting build properties for %s device\n", bootmid.c_str(), device.c_str());
+    device = GetProperty("ro.product.device", "");
+    LOG(ERROR) << "Found bootmid '" << bootmid.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
 }
