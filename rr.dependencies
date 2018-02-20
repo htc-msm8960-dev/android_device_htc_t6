@@ -1,0 +1,7 @@
+[
+  {
+    "repository": "TARKZiM/android_device_htc_t6-common",
+    "target_path": "device/htc/t6-common"
+    "branch"     : "lineage-15.1"
+  }
+]
