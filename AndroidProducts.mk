@@ -16,3 +16,8 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/full_t6.mk \
     $(LOCAL_DIR)/lineage_t6.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_t6-user \
+    lineage_t6-userdebug \
+    lineage_t6-eng
