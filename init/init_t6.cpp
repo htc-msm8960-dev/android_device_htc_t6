@@ -54,7 +54,7 @@ void property_override(char const prop[], char const value[])
 void common_properties()
 {
     property_set("rild.libargs", "-d /dev/smd0");
-    property_set("rild.libpath", "/system/vendor/lib/libril-qc-qmi-1.so");
+    property_set("rild.libpath", "/system/lib/libril-qc-qmi-1.so");
 }
 
 void cdma_properties(char const default_cdma_sub[], char const default_network[])
