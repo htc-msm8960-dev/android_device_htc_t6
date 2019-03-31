@@ -15,4 +15,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/full_t6.mk \
-    $(LOCAL_DIR)/lineage_t6.mk
+    $(LOCAL_DIR)/rr_t6.mk
