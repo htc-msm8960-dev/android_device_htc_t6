@@ -55,19 +55,20 @@ void common_properties()
 {
     property_set("rild.libargs", "-d /dev/smd0");
     property_set("rild.libpath", "/system/lib/libril-qc-qmi-1.so");
+    property_set("vendor.rild.libpath", "/system/lib/libril-qc-qmi-1.so");
 }
 
 void cdma_properties(char const default_cdma_sub[], char const default_network[])
 {
-    property_set("ro.telephony.default_network", default_network);
+    property_override("ro.telephony.default_network", default_network);
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
 }
 
 void gsm_properties(char const default_network[])
 {
-    property_set("ro.telephony.default_network", default_network);
-    property_set("telephony.lteOnGsmDevice", "1");
+    property_override("ro.telephony.default_network", default_network);
+    property_override("telephony.lteOnGsmDevice", "1");
 }
 
 void vendor_load_properties()
@@ -127,7 +128,7 @@ void vendor_load_properties()
     } else if (bootmid == "0P3P40000") {
         /* t6tl */
         common_properties();
-        property_set("ro.telephony.default_network", "22");
+        property_override("ro.telephony.default_network", "22");
         property_override("ro.product.model", "HTC 8088");
         property_override("ro.build.fingerprint", "htc/htccn_chs_cmcc/t6tl:5.0.2/LRX22G/524896.8:user/release-keys");
         property_override("ro.build.description", "3.22.1403.8 CL524896 release-keys");
