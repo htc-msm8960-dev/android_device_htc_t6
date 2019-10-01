@@ -51,6 +51,12 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void common_properties()
 {
     property_set("rild.libargs", "-d /dev/smd0");
@@ -82,10 +88,10 @@ void vendor_load_properties()
         /* t6vzw (t6wl) */
         common_properties();
         cdma_properties("0", "8");
-        property_override("ro.product.model", "HTC6600LVW");
-        property_override("ro.build.fingerprint", "VERIZON/HTCOneMaxVZW/t6wl:4.4.2/KOT49H/333209.2:user/release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "HTC6600LVW");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "VERIZON/HTCOneMaxVZW/t6wl:4.4.2/KOT49H/333209.2:user/release-keys");
         property_override("ro.build.description", "3.09.605.2 CL333209 release-keys");
-        property_override("ro.product.device", "t6vzw");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "t6vzw");
         property_override("ro.build.product", "t6vzw");
         property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.ril.enable.sdr", "0");
@@ -110,10 +116,10 @@ void vendor_load_properties()
         /* t6spr (t6whl) */
         common_properties();
         cdma_properties("1", "8");
-        property_override("ro.product.model", "One Max");
-        property_override("ro.build.fingerprint", "htc/sprint_wwe/t6whl:4.4.2/KOT49H/335898.5:user/release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "One Max");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "htc/sprint_wwe/t6whl:4.4.2/KOT49H/335898.5:user/release-keys");
         property_override("ro.build.description", "3.02.651.5 CL335898 release-keys");
-        property_override("ro.product.device", "t6spr");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "t6spr");
         property_override("ro.build.product", "t6spr");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("persist.radio.mode_pref_nv10", "1");
@@ -124,10 +130,10 @@ void vendor_load_properties()
         /* t6tl */
         common_properties();
         property_override("ro.telephony.default_network", "22");
-        property_override("ro.product.model", "HTC 8088");
-        property_override("ro.build.fingerprint", "htc/htccn_chs_cmcc/t6tl:5.0.2/LRX22G/524896.8:user/release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "HTC 8088");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "htc/htccn_chs_cmcc/t6tl:5.0.2/LRX22G/524896.8:user/release-keys");
         property_override("ro.build.description", "3.22.1403.8 CL524896 release-keys");
-        property_override("ro.product.device", "t6tl");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "t6tl");
         property_override("ro.build.product", "t6tl");
         property_set("ro.ril.enable.a52", "0");
         property_set("ro.ril.enable.a53", "1");
@@ -154,10 +160,10 @@ void vendor_load_properties()
         /* t6 */
         common_properties();
         gsm_properties("22");
-        property_override("ro.product.model", "One Max");
-        property_override("ro.build.fingerprint", "htc/htc_europe/t6ul:5.0.2/LRX22G/525693.7:user/release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "One Max");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "htc/htc_europe/t6ul:5.0.2/LRX22G/525693.7:user/release-keys");
         property_override("ro.build.description", "4.13.401.7 CL525693 release-keys");
-        property_override("ro.product.device", "t6");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "t6");
         property_override("ro.build.product", "t6");
     }
 
