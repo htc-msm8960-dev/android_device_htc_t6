@@ -122,6 +122,7 @@ void vendor_load_properties()
         property_override("ro.build.description", "3.02.651.5 CL335898 release-keys");
         property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "t6spr");
         property_override("ro.build.product", "t6spr");
+        property_set("ro.telephony.default_cdma_sub", "1");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("persist.radio.mode_pref_nv10", "1");
         property_set("persist.radio.dont_use_dsd", "true");
