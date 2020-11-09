@@ -67,16 +67,16 @@ void property_override_triple(char const product_prop[], char const system_prop[
 
 void common_properties()
 {
-    property_set("rild.libargs", "-d /dev/smd0");
-    property_set("rild.libpath", "/system/lib/libril-qc-qmi-1.so");
-    property_set("vendor.rild.libpath", "/system/lib/libril-qc-qmi-1.so");
+    property_override("rild.libargs", "-d /dev/smd0");
+    property_override("rild.libpath", "/system/lib/libril-qc-qmi-1.so");
+    property_override("vendor.rild.libpath", "/system/lib/libril-qc-qmi-1.so");
 }
 
 void cdma_properties(char const default_cdma_sub[], char const default_network[])
 {
     property_override("ro.telephony.default_network", default_network);
-    property_set("persist.radio.snapshot_enabled", "1");
-    property_set("persist.radio.snapshot_timer", "22");
+    property_override("persist.radio.snapshot_enabled", "1");
+    property_override("persist.radio.snapshot_timer", "22");
 }
 
 void gsm_properties(char const default_network[])
@@ -101,25 +101,25 @@ void vendor_load_properties()
         property_override("ro.build.description", "3.09.605.2 CL333209 release-keys");
         property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "t6vzw");
         property_override("ro.build.product", "t6vzw");
-        property_set("ro.telephony.default_cdma_sub", "0");
-        property_set("ro.ril.enable.sdr", "0");
-        property_set("ro.ril.vzw.feature", "1");
-        property_set("ro.ril.oem.ecclist", "911,*911,#911");
-        property_set("ro.ril.enable.a52", "0");
-        property_set("ro.ril.enable.a53", "1");
-        property_set("ro.ril.enable.gea3", "1");
-        property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
-        property_set("ro.ril.enable.managed.roaming", "1");
-        property_set("ro.ril.oem.show.act", "0");
-        property_set("ro.ril.set.mtusize", "1428");
-        property_set("ro.ril.wp.feature", "1");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
-        property_set("ro.gsm.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
-        property_set("ro.gsm.2nd_data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
-        property_set("ro.config.svlte1x", "true");
-        property_set("ro.telephony.get_imsi_from_sim", "true");
-        property_set("ro.ril.def.agps.mode", "6");
+        property_override("ro.telephony.default_cdma_sub", "0");
+        property_override("ro.ril.enable.sdr", "0");
+        property_override("ro.ril.vzw.feature", "1");
+        property_override("ro.ril.oem.ecclist", "911,*911,#911");
+        property_override("ro.ril.enable.a52", "0");
+        property_override("ro.ril.enable.a53", "1");
+        property_override("ro.ril.enable.gea3", "1");
+        property_override("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
+        property_override("ro.ril.enable.managed.roaming", "1");
+        property_override("ro.ril.oem.show.act", "0");
+        property_override("ro.ril.set.mtusize", "1428");
+        property_override("ro.ril.wp.feature", "1");
+        property_override("telephony.lteOnCdmaDevice", "1");
+        property_override("ro.cdma.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
+        property_override("ro.gsm.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
+        property_override("ro.gsm.2nd_data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
+        property_override("ro.config.svlte1x", "true");
+        property_override("ro.telephony.get_imsi_from_sim", "true");
+        property_override("ro.ril.def.agps.mode", "6");
     } else if (bootmid == "0P3P70000") {
         /* t6spr (t6whl) */
         common_properties();
@@ -129,12 +129,12 @@ void vendor_load_properties()
         property_override("ro.build.description", "3.02.651.5 CL335898 release-keys");
         property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "t6spr");
         property_override("ro.build.product", "t6spr");
-        property_set("ro.telephony.default_cdma_sub", "1");
-        property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("persist.radio.mode_pref_nv10", "1");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.ril.set.mtusize", "1422");
-        property_set("ro.ril.svdo", "true");
+        property_override("ro.telephony.default_cdma_sub", "1");
+        property_override("telephony.sms.pseudo_multipart", "1");
+        property_override("persist.radio.mode_pref_nv10", "1");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.ril.set.mtusize", "1422");
+        property_override("ro.ril.svdo", "true");
     } else if (bootmid == "0P3P40000") {
         /* t6tl */
         common_properties();
@@ -144,27 +144,27 @@ void vendor_load_properties()
         property_override("ro.build.description", "3.22.1403.8 CL524896 release-keys");
         property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "t6tl");
         property_override("ro.build.product", "t6tl");
-        property_set("ro.ril.enable.a52", "0");
-        property_set("ro.ril.enable.a53", "1");
-        property_set("ro.ril.hsdpa.category", "10");
-        property_set("ro.ril.hsupa.category", "6");
-        property_set("ro.ril.hsxpa", "2");
-        property_set("ro.ril.enable.sdr", "0");
-        property_set("ro.ril.set.mtusize", "1420");
-        property_set("ro.ril.enable.r8fd", "1");
-        property_set("ro.ril.disable.cpc", "1");
-        property_set("ro.telephony.ipv6_capability", "1");
-        property_set("ro.ril.enable.pre_r8fd", "1");
-        property_set("ro.ril.fd.pre_r8_tout.scr_off", "2");
-        property_set("ro.ril.fd.pre_r8_tout.scr_on", "3");
-        property_set("ro.ril.fd.r8_tout.scr_off", "2");
-        property_set("ro.ril.fd.r8_tout.scr_on", "3");
-        property_set("ro.ril.td.hsxpa", "2");
-        property_set("ro.ril.td.hsdpa.category", "15");
-        property_set("ro.ril.td.hsupa.category", "6");
-        property_set("ro.baseband.arch", "sglte2");
-        property_set("persist.radio.tdscdma_present", "2");
-        property_set("persist.radio.hyst_ps_to_g", "60");
+        property_override("ro.ril.enable.a52", "0");
+        property_override("ro.ril.enable.a53", "1");
+        property_override("ro.ril.hsdpa.category", "10");
+        property_override("ro.ril.hsupa.category", "6");
+        property_override("ro.ril.hsxpa", "2");
+        property_override("ro.ril.enable.sdr", "0");
+        property_override("ro.ril.set.mtusize", "1420");
+        property_override("ro.ril.enable.r8fd", "1");
+        property_override("ro.ril.disable.cpc", "1");
+        property_override("ro.telephony.ipv6_capability", "1");
+        property_override("ro.ril.enable.pre_r8fd", "1");
+        property_override("ro.ril.fd.pre_r8_tout.scr_off", "2");
+        property_override("ro.ril.fd.pre_r8_tout.scr_on", "3");
+        property_override("ro.ril.fd.r8_tout.scr_off", "2");
+        property_override("ro.ril.fd.r8_tout.scr_on", "3");
+        property_override("ro.ril.td.hsxpa", "2");
+        property_override("ro.ril.td.hsdpa.category", "15");
+        property_override("ro.ril.td.hsupa.category", "6");
+        property_override("ro.baseband.arch", "sglte2");
+        property_override("persist.radio.tdscdma_present", "2");
+        property_override("persist.radio.hyst_ps_to_g", "60");
     } else {
         /* t6 */
         common_properties();
